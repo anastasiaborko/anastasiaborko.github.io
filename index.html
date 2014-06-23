@@ -208,7 +208,7 @@
                         <br>
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-lg btn-success">Send</button>
+                                <button id="send-email" type="submit" class="btn btn-lg btn-success">Send</button>
                             </div>
                         </div>
                     </form>
@@ -455,6 +455,20 @@
 
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    
+    <script>
+      $( document ).ready(function() {
+          $('#send-email').click(function() {
+            var message = $("label[for='message']").val();
+            var name = $("label[for='name']").val();
+            var email = $("label[for='email']").val();
+            var address = 'b' + '@' + 'example.com';
+            alert('sending email will be implemented soon');
+            document.location.href = "mailto:" + address + "?subject=" + "Message from " + name + "&cc=" + email + "&body=" + message;
+          });
+      });
+    </script>
+    
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="js/classie.js"></script>
     <script src="js/cbpAnimatedHeader.js"></script>
